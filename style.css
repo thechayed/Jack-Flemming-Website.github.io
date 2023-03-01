@@ -1,0 +1,143 @@
+body{
+    background-color: #101010;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: #6BD0FF;
+    text-decoration: none;
+}
+
+/*#region header*/
+.headerspace{
+    height: 48px;
+}
+
+.header{
+    position: fixed;
+    background-color: #111;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    z-index: 100;
+}
+
+/*#region nav*/
+.nav{
+    position: absolute;
+    display: grid;
+    grid-template: "a a a";
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+    left: 40vw;
+    right: 64px;
+    align-content: stretch;
+}
+
+.nav a{
+    color: #3FA0EF;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav a:hover{
+    color: #6BD0FF;
+}
+
+
+.nav a:active{
+    color: #6BD0FF;
+}
+
+.nav a:visited{
+    color: #fff;
+}
+
+.navItem{
+    position: relative;
+    height: calc(100% - 16px);
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    vertical-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.navItem::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    background-color: rgba(0,0,0,0);
+    transition: right 0.2s ease-in-out;
+}
+
+.navItem:hover::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #6BD0FF;
+}
+
+.navItem::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    right: 0;
+    background-color: rgba(0,0,0,0);
+    transition: left 0.2s ease-in-out;
+}
+
+.navItem:hover::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #6BD0FF;
+}
+/*#endregion*/
+/*#endregion*/
+
+.container {
+    position: relative;
+    inset: 0;
+    height: fit-content;
+}
+
+.block{
+    position: relative;
+    left: 0;
+    right: 0;
+    min-height: 160px;
+}
+.block:nth-child(odd){
+    background: #1f2123;
+    color: #000;
+    mask-image: url("Assets/grungemask 1.png");
+    mask-size: 100%;
+    -webkit-mask-image: url("Assets/grungemask 1.png");
+    -webkit-mask-size: 200% 200%;
+    -webkit-mask-position: 50% 100%;
+}
