@@ -183,10 +183,28 @@ a{
     padding: 8px;
 }
 
-.gallery img{
+.galleryItem{
     position: relative;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    overflow: hidden;
+}
+
+.galleryItem:hover:nth-child(1){
+    transition: margin-top 0.5s ease-in-out;
+    margin-top: -100px;
+}
+.galleryItem:not(.galleryItem:hover):nth-child(1){
+    transition: margin-top 0.5s ease-in-out;
+    margin-top: 0px;
+}
+
+.galleryDescription{
+    padding: 8px;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    align-items: center;
+    text-align: center;
 }
