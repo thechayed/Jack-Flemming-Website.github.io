@@ -14,6 +14,17 @@ a{
     text-decoration: none;
 }
 
+
+.logo{
+    position: absolute;
+    height: 50%;
+    width: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: contrast(200%);
+}
+
 /*#region header*/
 .headerspace{
     height: 48px;
@@ -47,18 +58,18 @@ a{
 }
 
 .nav a{
-    color: #3FA0EF;
+    color: slategray;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
 }
 
 .nav a:hover{
-    color: #6BD0FF;
+    color: blue;
 }
 
 
 .nav a:active{
-    color: #6BD0FF;
+    color: blue;
 }
 
 .nav a:visited{
@@ -97,7 +108,7 @@ a{
     left: 0;
     right: 0;
     height: 2px;
-    background-color: #6BD0FF;
+    background-color: blue;
 }
 
 .navItem::before{
@@ -116,7 +127,7 @@ a{
     left: 0;
     right: 0;
     height: 2px;
-    background-color: #6BD0FF;
+    background-color: blue;
 }
 /*#endregion*/
 /*#endregion*/
@@ -133,12 +144,6 @@ a{
     right: 0;
     min-height: 320px;
     overflow: hidden;
-}
-.block:nth-child(odd){
-    background: #1f2123;
-    color: #000;
-    mask-image: url("Assets/grungemask 1.png");
-    mask-size: 100%;
 }
 
 .float {
@@ -165,4 +170,23 @@ a{
     100% {
         transform: translate(0, 0);
     }
+}
+
+.gallery{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 8px;
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+}
+
+.gallery img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
