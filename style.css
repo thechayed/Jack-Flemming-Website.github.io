@@ -1,12 +1,12 @@
 body{
     background-color: #101010;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
     padding: 0;
     text-align: center;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 a{
@@ -14,6 +14,10 @@ a{
     text-decoration: none;
 }
 
+p{
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    pointer-events: none;
+}
 
 .logo{
     position: absolute;
@@ -31,6 +35,7 @@ a{
 }
 
 .header{
+    display:flex;
     position: fixed;
     background-color: #111;
     color: #fff;
@@ -40,45 +45,55 @@ a{
     top: 0;
     left: 0;
     width: 100%;
-    height: inherit;
+    height: fit-content;
     z-index: 100;
     border-bottom: solid thin slategray;
 }
 
 /*#region nav*/
 .nav{
-    position: absolute;
+    position: relative;
     display: grid;
     grid-template: "a a a";
     justify-content: end;
     align-items: center;
-    height: 100%;
     left: 40vw;
     right: 64px;
     align-content: stretch;
+    margin-right: 50%;
+    margin-left: auto;
 }
 
-.nav a{
+.nav p{
     color: slategray;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
 }
 
-.nav a:hover{
+.nav p:hover{
     color: blue;
 }
 
 
-.navItem:hover a{
+.navItem:hover >  .navText{
     color: blue;
 }
 
-
-.nav a:active{
+.navItem:focus > .navText{
     color: blue;
 }
 
-.nav a:visited{
+.navText{
+    color: slategray;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav p:active{
+    color: blue;
+}
+
+.nav p:visited{
     color: #fff;
 }
 
@@ -95,6 +110,7 @@ a{
     vertical-align: center;
     padding-left: 8px;
     padding-right: 8px;
+    outline: none;
 }
 
 .navItem::after{
@@ -108,6 +124,16 @@ a{
 }
 
 .navItem:hover::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: blue;
+}
+
+.navItem:focus::after{
     content: "";
     position: absolute;
     bottom: 0;
@@ -135,11 +161,22 @@ a{
     height: 2px;
     background-color: blue;
 }
+
+.navItem:focus::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: blue;
+}
+
+
 /*#endregion*/
 /*#endregion*/
 
 .container {
-    position: relative;
+    position: absolute;
     inset: 0;
     height: fit-content;
 }
@@ -148,8 +185,13 @@ a{
     position: relative;
     left: 0;
     right: 0;
-    min-height: 240px;
+    min-height: 100vh;
     overflow: hidden;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .float {
@@ -202,6 +244,22 @@ a{
     overflow-wrap: break-word;
 }
 
+.BioText{
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: rgba(10,10,10,0.75) 0px 10px 10px 1px;
+    background: rgba(0,0,0,0.85);
+}
+
+.BioText > p{
+    mix-blend-mode: difference;
+    filter: contrast(150%);
+}
+
+.BioText > p::before{
+}
+
+
 .gallery{
     position: relative;
     display: grid;
@@ -236,8 +294,14 @@ a{
 
 .galleryItem:hover > .galleryItemContent > .galleryDescription{
     transition: margin-top 0.5s ease-in-out;
-    margin-top: -100px;
+    margin-top: -150px;
 }
+
+.galleryItem:focus > .galleryItemContent > .galleryDescription{
+    transition: margin-top 0.5s ease-in-out;
+    margin-top: -150px;
+}
+
 .galleryItem > .galleryItemContent > .galleryDescription{
     transition: margin-top 0.5s ease-in-out;
     margin-top: 100px;
@@ -262,3 +326,67 @@ a{
     object-position: center;
     overflow: hidden;
 }
+
+.reelContainer{
+    display: flex;
+    position:fixed; 
+    top: calc(100% - 75px); 
+    left: 0; 
+    z-index: 1000;
+    transition: top 0.5s ease-in-out;
+    flex-direction: column;
+    width: 100%;
+    height: 50vh;
+    overflow: visible;
+    outline: none;
+}
+
+.reelContainer:hover{
+    top: calc(100% - 50vh);
+    transition: top 0.5s ease-in-out;
+}
+
+.reelContainer:focus{
+    top: calc(100% - 50vh);
+    transition: top 0.5s ease-in-out;
+}
+
+.reelTitle{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 100%;
+    padding: 8px;
+    overflow: visible;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    background-color: rgba(0,0,100,0.5);
+    color: #fff;
+}
+
+
+
+.reelTitle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: blue;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.75;
+        top: 0;
+    }
+    100% {
+        opacity: 0.0;
+        top: -32px;
+    }
+}
+
