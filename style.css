@@ -42,6 +42,7 @@ a{
     width: 100%;
     height: inherit;
     z-index: 100;
+    border-bottom: solid thin slategray;
 }
 
 /*#region nav*/
@@ -64,6 +65,11 @@ a{
 }
 
 .nav a:hover{
+    color: blue;
+}
+
+
+.navItem:hover a{
     color: blue;
 }
 
@@ -142,7 +148,7 @@ a{
     position: relative;
     left: 0;
     right: 0;
-    min-height: 320px;
+    min-height: 240px;
     overflow: hidden;
 }
 
@@ -172,39 +178,87 @@ a{
     }
 }
 
+.BioContainer{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "a b";
+    grid-gap: 8px;
+    padding: 48px;
+    overflow: hidden;
+    height: fit-content;
+}
+
+.BioContainer > .BioItem{
+    padding: 16px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 .gallery{
     position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-auto-rows: max-content;
     grid-gap: 8px;
     height: 100%;
     width: 100%;
     padding: 8px;
-}
-
-.galleryItem{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
     overflow: hidden;
 }
 
-.galleryItem:hover:nth-child(1){
+.galleryItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.galleryItem:hover{
+    border: solid 1px #fff;
+}
+
+.galleryItem img{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.galleryItem:hover > .galleryItemContent > .galleryDescription{
     transition: margin-top 0.5s ease-in-out;
     margin-top: -100px;
 }
-.galleryItem:not(.galleryItem:hover):nth-child(1){
+.galleryItem > .galleryItemContent > .galleryDescription{
     transition: margin-top 0.5s ease-in-out;
-    margin-top: 0px;
+    margin-top: 100px;
 }
 
 .galleryDescription{
+    position: relative;
     padding: 8px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.75);
     color: #fff;
     align-items: center;
     text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.galleryItemContent{
+    position: relative;
+    top: 0;
+    left: 0;
+    /*object-fit: cover;*/
+    object-position: center;
+    overflow: hidden;
 }

@@ -10,49 +10,62 @@
     <div class="header">
         <div class="nav">
             <div class="navItem">
-                <a href="index.html">Home</a>
+                <a href="#Bio">Bio</a>
+                <a href="#Bio" style="position:absolute;float:left;width:100%;height:100%;"> </a>
             </div>
             <div class="navItem">
                 <a href="about.html">About</a>
+                <a href="index.html" style="position:absolute;float:left;width:100%;height:100%;"> </a>
             </div>
             <div class="navItem">
                 <a href="contact.html">Contact</a>
+                <a href="index.html" style="position:absolute;float:left;width:100%;height:100%;"> </a>
             </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="block" style="height:480px">
+    <div class="block">
         <img src="Assets/JF_Logo_2_shadows_new.png" alt="logo" class="logo">
     </div>
     <div class="block">
-        Jack started his musical journey at age 7, learning the piano and music theory. He was accepted to study at the Royal Birmingham Conservatoire, and graduated in 2017, with a BMus (Hons).
-
-        Since 2020, Jack has actively worked within the film industry, both as a composer on numerous short films, and as a member of the music department on several high profile projects. He is heavily inspired by the work of John Williams, Gordy Haab, Bear McCreary, and Howard Shore, to name but a few.
-
-        When working on scores, and original music, Jack's main focus is on the narrative, and the emotions within the narrative, to help tell the story in the most emotional and human way possible.
-    </div>
-    <div class="block">
-        <!-- ReelCrafter reel: Jack Fleming Reel -->
-        <iframe
-                width="100%"
-                height="400"
-                scrolling="no"
-                frameborder="no"
-                src="https://play.reelcrafter.com/embed/0ccd5684-7d2e-4b16-b29f-51394acc4eac">
-        </iframe>
+        <h1>Bio</h1>
+        <div class="BioContainer">
+            <div class="BioImage BioItem">
+                <img style="width:50%; height:auto" src="Assets/headshot_TCAFPrem%20(2)-01-min.jpeg" alt="Jack Fleming">
+            </div>
+            <div class="BioText BioItem">
+                <p>Jack Fleming is a composer, and music producer, based in the UK.</p>
+    
+                <p>Jack started his musical journey at age 7, learning the piano and music theory. He was accepted to study at the Royal Birmingham Conservatoire, and graduated in 2017, with a BMus (Hons).</p>
+    
+                <p>Since 2020, Jack has actively worked within the film industry, both as a composer on numerous short films, and as a member of the music department on several high profile projects. He is heavily inspired by the work of John Williams, Gordy Haab, Bear McCreary, and Howard Shore, to name but a few.</p>
+    
+                <p>When working on scores, and original music, Jack's main focus is on the narrative, and the emotions within the narrative, to help tell the story in the most emotional and human way possible.</p>
+            </div>
+        </div>
     </div>
     <div class="block">
         <h3>Composer</h3>
         <div class="gallery">
-            <div class="galleryItem"><img style="width: 100%; height: 100%" src="Assets/First%20Woman.jpg" alt="1" ><div class ="galleryDescription">foobar</div></div>
-            <div class="galleryItem"><img style="width: 100%; height: 100%" src="Assets/AreaOL51.jpg" alt="2" class="galleryItem"><div class ="galleryDescription">foobar</div></div>
-            <div class="galleryItem"><img style="width: 100%; height: 100%" src="Assets/TCAF.jpg" alt="3" class="galleryItem"><div class ="galleryDescription">foobar</div></div>
-            <div class="galleryItem"><img style="width: 100%; height: 100%" src="Assets/PCARE%20poster.jpeg" alt="4" class="galleryItem"><div class ="galleryDescription">foobar</div></div>
-            <div class="galleryItem"><img style="width: 100%; height: 100%" src="Assets/From%20the%20Edge%20of%20the%20Clouds%20Poster.jpg" alt="5" class="galleryItem"><div class ="galleryDescription">foobar</div></div>
-            <div class="galleryItem"><img style="width: 100%; height: 100%" src="Assets/toxic%20poster.jpg" alt="6" class="galleryItem"><div class ="galleryDescription">foobar</div></div>
-            <div class="galleryItem"><img style="width: 100%; height: 100%" src="Assets/OUTLIERS%20POSTER.jpeg" alt="7" class="galleryItem"><div class ="galleryDescription">foobar</div></div>
+            <div class="galleryItem">
+                <div class="galleryItemContent">
+                    <img style="width: 100%; height: 100%" src="Assets/First%20Woman.jpg" alt="1"/>
+                    <div class ="galleryDescription">foobar</div>
+                </div>
+            </div>
+            <div class="galleryItem">
+                <div class="galleryItemContent">
+                    <img style="width: 100%; height: 100%" src="Assets/AreaOL51.jpg" alt="1"/>
+                    <div class ="galleryDescription">foobar</div>
+                </div>
+            </div>
+            <div class="galleryItem"><div class="galleryItemContent"><img style="width: 100%; height: 100%" src="Assets/TCAF.jpg" alt="1"/><div class ="galleryDescription">foobar</div></div></div>
+            <div class="galleryItem"><div class="galleryItemContent"><img style="width: 100%; height: 100%" src="Assets/PCARE%20poster.jpeg" alt="1"/><div class ="galleryDescription">foobar</div></div></div>
+            <div class="galleryItem"><div class="galleryItemContent"><img style="width: 100%; height: 100%" src="Assets/From%20the%20Edge%20of%20the%20Clouds%20Poster.jpg" alt="1"/><div class ="galleryDescription">foobar</div></div></div>
+            <div class="galleryItem"><div class="galleryItemContent"><img style="width: 100%; height: 100%" src="Assets/toxic%20poster.jpg" alt="1"/><div class ="galleryDescription">foobar</div></div></div>
+            <div class="galleryItem"><div class="galleryItemContent"><img style="width: 100%; height: 100%" src="Assets/OUTLIERS%20POSTER.jpeg" alt="1"/><div class ="galleryDescription">foobar</div></div></div>
         </div>
     </div>
     <div class="block"></div>
@@ -61,5 +74,13 @@
     <div class="block"></div>
     <div class="block"></div>
 </div>
+
+<!-- ReelCrafter reel: Jack Fleming Reel -->
+<iframe
+        width="100%"
+        height="400"
+        style="position:fixed; bottom: 0; left: 0; z-index: 1000;"
+        src="https://play.reelcrafter.com/embed/0ccd5684-7d2e-4b16-b29f-51394acc4eac">
+</iframe>
 </body>
 </html>
