@@ -22,7 +22,24 @@ a{
 p{
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     pointer-events: none;
+    user-select: none;
 }
+
+h1 {
+    pointer-events: none;
+    user-select: none;
+}
+
+h2 {
+    pointer-events: none;
+    user-select: none;
+}
+
+h3 {
+    pointer-events: none;
+    user-select: none;
+}
+
 
 .logo{
     position: absolute;
@@ -254,11 +271,15 @@ p{
     font-size: 1.25rem;
     box-shadow: rgba(10,10,10,0.75) 0px 10px 10px 1px;
     background: rgba(0,0,0,0.85);
+    cursor: default;
+    border-left: dashed thin #00f;
+    border-right: dashed thin #00f;
 }
 
 .BioText > p{
     mix-blend-mode: difference;
     filter: contrast(150%);
+    text-shadow: 1px 0px 10px #006, -1px 0px 10px #006, 0px 1px 10px #006, 0px -1px 10px #006;
 }
 
 .BioText > p::before{
@@ -284,7 +305,7 @@ p{
     flex-direction: column;
 }
 
-.galleryItemContainer:hover{
+.galleryItemContainer:not(.blank):hover{
     border: solid 1px #fff;
 }
 
@@ -298,6 +319,12 @@ p{
 }
 
 .galleryItemContainer{
+    float: left;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/14;
+    overflow: hidden;
+    display: flex;
 }
 
 .galleryItemContainer:hover > .galleryItem > .galleryItemContent > .galleryDescription{
@@ -313,6 +340,17 @@ p{
 .galleryItemContainer > .galleryItem > .galleryItemContent > .galleryDescription{
     transition: margin-top 0.5s ease-in-out;
     margin-top: 100px;
+}
+
+
+.galleryItemContainer > .galleryItem > .galleryItemContent {
+    scale: 125%;
+    transition: scale 0.5s ease-in-out;
+}
+
+.galleryItemContainer:hover > .galleryItem > .galleryItemContent{
+    scale: 100%;
+    transition: scale 0.5s ease-in-out;
 }
 
 .galleryDescription{
@@ -333,6 +371,8 @@ p{
     /*object-fit: cover;*/
     object-position: center;
     overflow: hidden;
+    margin-top: 50%;
+    transform: translateY(-25%);
 }
 
 .reelContainer{
@@ -396,4 +436,57 @@ p{
         opacity: 0.0;
         top: -32px;
     }
+}
+
+.SectionHeader{
+    background: #222;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width:100%;
+    border-bottom: dashed thin #00f;
+    border-top: dashed thin #00f;
+}
+
+.SubHeader{
+    text-decoration: solid underline #00f;
+}
+
+/* -- Testimonials -- */
+.testimonialText {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    width: 500px;
+    margin: 0.25em 0;
+    padding: 0.35em 40px;
+    line-height: 1.45;
+    position: relative;
+    color: #fff;
+}
+
+.testimonialText:before {
+    display: block;
+    padding-left: 10px;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    color: #777;
+}
+
+.testimonialAuthor{
+    color: #777;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+.testimonialAuthor:before {
+    content: "\2014 \2009";
+    color: #777;
+}
+
+.elfsight-app-591243fb-f68d-480f-92ef-a3c8cae80c4b{
+    width:100%;
 }
