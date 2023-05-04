@@ -344,7 +344,7 @@ h3 {
 
 
 .galleryItemContainer > .galleryItem > .galleryItemContent {
-    scale: 125%;
+    scale: 175%;
     transition: scale 0.5s ease-in-out;
 }
 
@@ -489,4 +489,26 @@ h3 {
 
 .elfsight-app-591243fb-f68d-480f-92ef-a3c8cae80c4b{
     width:100%;
+}
+
+.Seperator {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: "a a";
+    grid-gap: 24px;
+}
+
+.testyImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.testimonialContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
