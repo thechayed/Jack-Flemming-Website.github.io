@@ -1,3 +1,8 @@
+html{
+
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: #101010;
     color: #fff;
@@ -54,7 +59,7 @@ p{
 .nav{
     position: relative;
     display: grid;
-    grid-template: "a a a";
+    grid-template: "a a a a";
     justify-content: end;
     align-items: center;
     left: 40vw;
@@ -279,7 +284,7 @@ p{
     flex-direction: column;
 }
 
-.galleryItem:hover{
+.galleryItemContainer:hover{
     border: solid 1px #fff;
 }
 
@@ -292,17 +297,20 @@ p{
     object-position: center;
 }
 
-.galleryItem:hover > .galleryItemContent > .galleryDescription{
+.galleryItemContainer{
+}
+
+.galleryItemContainer:hover > .galleryItem > .galleryItemContent > .galleryDescription{
     transition: margin-top 0.5s ease-in-out;
     margin-top: -150px;
 }
 
-.galleryItem:focus > .galleryItemContent > .galleryDescription{
+.galleryItemContainer:focus > .galleryItem > .galleryItemContent > .galleryDescription{
     transition: margin-top 0.5s ease-in-out;
     margin-top: -150px;
 }
 
-.galleryItem > .galleryItemContent > .galleryDescription{
+.galleryItemContainer > .galleryItem > .galleryItemContent > .galleryDescription{
     transition: margin-top 0.5s ease-in-out;
     margin-top: 100px;
 }
@@ -329,9 +337,9 @@ p{
 
 .reelContainer{
     display: flex;
-    position:fixed; 
-    top: calc(100% - 75px); 
-    left: 0; 
+    position:fixed;
+    top: calc(100% - 75px);
+    left: 0;
     z-index: 1000;
     transition: top 0.5s ease-in-out;
     flex-direction: column;
@@ -389,4 +397,3 @@ p{
         top: -32px;
     }
 }
-
