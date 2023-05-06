@@ -40,6 +40,15 @@ h3 {
     user-select: none;
 }
 
+.BioIMG{
+    float:left; 
+    position: absolute; 
+    left:0px; 
+    height:100vh;
+    width:auto;
+    max-height: 100vw;
+    transform: translateX(-25%);
+}
 
 .logo{
     position: absolute;
@@ -511,4 +520,55 @@ h3 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 767px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .BioContainer{
+        flex-direction: column;
+        grid-template-areas: "a";
+        grid-template-columns: 1fr;
+        margin-top:256px;
+        padding:0;
+    }
+    .block{
+        width:100%;
+    }
+    .nav{
+        width:100%;
+        left: 0px;
+        right: 0px;
+        margin-left:0;
+        margin-right:0;
+        justify-content: initial;
+    }
+    .navItem{
+        justify-content: center;
+    }
+    .Seperator{
+        display: flex;
+        flex-direction: column;
+        float:left;
+    }
+    .testimonialContainer{
+        overflow: hidden;
+    }
+    .testimonial{
+        word-wrap: break-word;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .testimonialText{
+        width:75%;
+    }
+    .blank{
+        width:0;
+        height:0;
+    }
 }
