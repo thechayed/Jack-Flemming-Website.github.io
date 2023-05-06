@@ -524,6 +524,9 @@ h3 {
 
 /* For screens smaller than 768px */
 @media (max-width: 767px) {
+    .BioIMG{
+        transform: scaleX(-100%);
+    }
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
