@@ -523,7 +523,7 @@ h3 {
 }
 
 /* For screens smaller than 768px */
-@media  (max-width: 768px) or (orientation: portrait)  {
+@media (orientation: portrait) {
     .BioIMG{
         transform: scaleX(-100%);
     }
