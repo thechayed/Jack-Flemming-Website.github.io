@@ -484,6 +484,17 @@ h3 {
     color: #777;
 }
 
+.testimonialText:after {
+    display: block;
+    padding-left: 10px;
+    content: "\201D";
+    font-size: 80px;
+    position: absolute;
+    right: 5px;
+    bottom: -50px;
+    color: #777;
+}
+
 .testimonialAuthor{
     color: #777;
     font-size: 14px;
@@ -525,6 +536,10 @@ h3 {
 /* For screens smaller than 768px */
 @media (orientation: portrait) {
     .BioIMG{
+        width: 100%;
+        left:0px;
+        right:0px;
+        height: auto;
         transform: scaleX(-100%);
     }
     .gallery {
@@ -534,7 +549,6 @@ h3 {
         flex-direction: column;
         grid-template-areas: "a";
         grid-template-columns: 1fr;
-        margin-top:256px;
         padding:0;
     }
     .block{
