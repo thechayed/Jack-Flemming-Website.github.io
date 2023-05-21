@@ -6,11 +6,14 @@
     <title>Jack Flemming, Composer</title>
     <meta name="description" content="Jack Flemming is a composer and producer of music for film and video games. Check out his portfolio, including major releases like Wrath of Man and Operation Fortune.">
     <meta name="keywords" content="Jack Flemming, Composer, Film music, Video game music, Wrath of Man, Operation Fortune, Guy Ritchie">
-    <meta property="og:image" content="http://jackflemingcomposer.com/Assets/headshot_TCAFPrem%20(2)-01-min.jpeg">
+    <meta property="og:image" content="http://jackflemingcomposer.com/Assets/headshot_TCAFPrem%20(2)-01-min.jpeg" >
     <meta property="og:url" content="https://www.jackflemmingcomposer.com">
     <link rel="stylesheet" href="style.css">
+    
+    <script src="libs/jquery.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<script src="BioContainerHandler.js"></script>
 <div class="headerspace">
     <div class="header">
         <div class="nav">
@@ -32,24 +35,24 @@
 
 <div class="container">
     <section id="Bio">
-        <img class="BioIMG" style="position:absolute; opacity: 0; top:-50%;" src="Assets/headshot_TCAFPrem%20(2)-01-min.jpeg" alt="Jack Fleming">
+        <img class="FakeBioIMG" style="position:absolute; opacity: 0; top:-50%;" src="Assets/headshot_TCAFPrem%20(2)-01-min.jpeg" alt="Jack Fleming">
     </section>
     
     <div class="block BioBlock">
-        <div class="BioContainer">
-            <div class="BioImage BioItem">
-                <img class="BioIMG" src="Assets/headshot_TCAFPrem%20(2)-01-min.jpeg" alt="Jack Fleming">
-            </div>
-            <a href="#bio" class="BioText BioItem">
+        <div class="BioContainer" >
+            <a href="#bio" class="BioText BioIt em" id="BioElem_0" style="z-index: 10">
                 <img src="Assets/JF_Logo_2_shadows_new.png" style="height: 128px; width: auto">
                 <p>Jack Fleming is a composer based in the UK.</p>
-    
+
                 <p>Jack started his musical journey at age 7, learning the piano and music theory. He was accepted to study at the Royal Birmingham Conservatoire, and graduated in 2017, with a BMus (Hons).</p>
-    
+
                 <p>Since 2020, Jack has actively worked within the film industry, both as a composer on numerous short films, and as a member of the music department on several high profile projects. He is heavily inspired by the work of John Williams, Gordy Haab, Bear McCreary, and Howard Shore, to name but a few.</p>
-    
+
                 <p>When working on scores, and original music, Jack's main focus is on the narrative, and the emotions within the narrative, to help tell the story in the most emotional and human way possible.</p>
             </a>
+            <div class="BioImage BioItem" id="BioElem_1">
+                <img class="BioIMG" src="Assets/headshot_TCAFPrem%20(2)-01-min.jpeg" alt="Jack Fleming">
+            </div>
         </div>
     </div>
     
