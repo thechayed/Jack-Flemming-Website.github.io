@@ -16,6 +16,11 @@ body{
     text-align: center;
     font-family: 'Noto Sans', sans-serif;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    justify-content: center;
 }
 
 a{
@@ -238,6 +243,10 @@ h3 {
     height: fit-content;
     margin-left: 16px;
     margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .block{
