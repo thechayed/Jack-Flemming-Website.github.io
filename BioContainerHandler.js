@@ -1,6 +1,3 @@
-var BioContainer = $('.BioContainer');
-var BioElem_0 = $('#BioElem_0');
-var BioElem_1 = $('#BioElem_1');
 // 0 = Landscape, 1 = Portrait
 var BioState = 0;
 var JustLoaded = true;
