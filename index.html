@@ -9,16 +9,17 @@
     <meta property="og:image" content="http://jackflemingcomposer.com/Assets/headshot_TCAFPrem%20(2)-01-min.jpeg" >
     <meta property="og:url" content="https://www.jackflemmingcomposer.com">
     <link rel="stylesheet" href="style.css">
-    
-    <script src="libs/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="BioContainerHandler.js"></script>
 </head>
 <body>
-<script src="BioContainerHandler.js"></script>
 <div class="headerspace">
     <div class="header">
         <div class="nav">
             <a href="#Bio" class="navItem">
                 <p class="navText">Bio</p>
+            </a>
+            <a href="#Reels" class="navItem">
+                <p class="navText">Demo Reel</p>
             </a>
             <a href="#Work" class="navItem">
                 <p class="navText">Work</p>
@@ -55,11 +56,32 @@
             </div>
         </div>
     </div>
-    
+
+    <section class="block" id="Reels">
+        <h2> </h2>
+    </section>
+    <section class="SectionHeaderBlock">
+        <h2 class="SectionHeader">Audio Reel</h2>
+    </section>
+    <section  class="block">
+        <iframe
+                width="100%"
+                height="100%"
+                class="reel"
+                style="height: 50vh"
+                src="https://play.reelcrafter.com/embed/0ccd5684-7d2e-4b16-b29f-51394acc4eac"
+        >
+        </iframe>
+    </section>
+
     <section class="block" id="Work">
-        <h2></h2>
-        
+        <h2> </h2>
+    </section>
+    <section class="SectionHeaderBlock">
         <h2 class="SectionHeader">Composer</h2>
+    </section>
+    <section class="block">
+        
         <h3 class="SubHeader">Film</h3>
         <div class="gallery">
             <div class="galleryItemContainer">
@@ -244,9 +266,13 @@
             </div>
         </div>
     </section>
-    <section id="Testimonials" class="block">
-        <h2 class=""></h2>
+    <section class="block" id="Testimonials">
+        <h2> </h2>
+    </section>
+    <section class="SectionHeaderBlock">
         <h2 class="SectionHeader">Testimonials</h2>
+    </section>
+    <section class="block">
         <div class="Seperator">
             <div class="testimonialContainer">
                 <div class="testimonial">
@@ -299,17 +325,5 @@
         <div class="elfsight-app-591243fb-f68d-480f-92ef-a3c8cae80c4b"></div>
     </section>
 </div>
-
-<a href="#reels" class="reelContainer">
-    <div class="reelTitle"><h3 >Audio Reel</h3></div>
-    <!-- ReelCrafter reel: Jack Fleming Reel -->
-    <iframe
-            width="100%"
-            height="100%"
-            class="reel"
-            src="https://play.reelcrafter.com/embed/0ccd5684-7d2e-4b16-b29f-51394acc4eac"
-    >
-    </iframe>
-</a>
 </body>
 </html>

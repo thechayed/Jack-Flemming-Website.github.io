@@ -1,14 +1,44 @@
 // 0 = Landscape, 1 = Portrait
 var BioState = 0;
 var JustLoaded = true;
+var disableScrollLock = false;
+var lastTimeOut = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
     rearrange();
+    
+    var navItems = document.getElementsByClassName("navItem");
+    for(var i = 0; i < navItems.length; i++){
+        console.log(navItems[i])
+        
+        navItems[i].addEventListener('click', function() {
+            disableScrollLock = true;  
+            lastTimeOut = Date.now();
+            
+            // Add a delay if needed before re-enabling the scroll lock
+            setTimeout(function() {
+                if(Date.now() - lastTimeOut >= 10000){
+                    disableScrollLock = false;
+                }
+            }, 10000); // Delay in milliseconds (adjust as needed)
+        });
+    }
 });
 
 window.addEventListener('resize', function() {
     rearrange();
 });
+
+window.addEventListener('orientationchange', function() {
+    rearrange();
+});
+
+window.addEventListener('scroll', function() {
+    if(disableScrollLock == false){
+        window.scroll(0, window.scrollY);
+    }
+});
+
 
 //Rearrange elements on resize
 function rearrange(){

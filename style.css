@@ -1,5 +1,6 @@
 html{
     scroll-behavior: smooth;
+    --nav-font-size:0.75rem;
     --font-size: 1rem;
     --header-font-size: 1.5rem;
     --header2-font-size: 1.25rem;
@@ -14,6 +15,7 @@ body{
     padding: 0;
     text-align: center;
     font-family: 'Noto Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 a{
@@ -80,6 +82,13 @@ h3 {
 }
 
 /*#region header*/
+.SectionHeaderBlock{
+    position: relative;
+    width: 100%;
+    margin-left:-16px;
+    padding:0;
+}
+
 .headerspace{
     height: 48px;
 }
@@ -104,7 +113,7 @@ h3 {
 .nav{
     position: relative;
     display: grid;
-    grid-template: "a a a a";
+    grid-template: "a a a a a";
     justify-content: end;
     align-items: center;
     left: 40vw;
@@ -112,6 +121,7 @@ h3 {
     align-content: stretch;
     margin-right: 50%;
     margin-left: auto;
+    font-size: var(--nav-font-size);
 }
 
 .nav p{
@@ -229,6 +239,8 @@ h3 {
     position: absolute;
     inset: 0;
     height: fit-content;
+    margin-left: 16px;
+    margin-right: 16px;
 }
 
 .block{
@@ -301,6 +313,7 @@ h3 {
     cursor: default;
     border-left: dashed thin #00f;
     border-right: dashed thin #00f;
+    height: fit-content;
 }
 
 .BioText > p{
@@ -469,7 +482,7 @@ h3 {
     background: #222;
     padding-top: 4px;
     padding-bottom: 4px;
-    width:100%;
+    width:110%;
     border-bottom: dashed thin #00f;
     border-top: dashed thin #00f;
 }
@@ -590,10 +603,10 @@ h3 {
         left: 0px;
         right: 0px;
         height: 4rem;
-        font-size: var(--font-size);
         margin-left:0;
         margin-right:0;
         justify-content: initial;
+        font-size: var(--font-size);
     }
     .navItem{
         justify-content: center;
