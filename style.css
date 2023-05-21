@@ -253,12 +253,13 @@ h3 {
     position: relative;
     left: 0;
     right: 0;
-    overflow: hidden;
+    overflow: visible;
     vertical-align: middle;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .float {
@@ -320,6 +321,7 @@ h3 {
     border-left: dashed thin #00f;
     border-right: dashed thin #00f;
     height: fit-content;
+    margin-top: 50%;
 }
 
 .BioText > p{
@@ -485,7 +487,7 @@ h3 {
 }
 
 .SectionHeader{
-    background: #222;
+    background: #000;
     padding-top: 4px;
     padding-bottom: 4px;
     width:110%;
@@ -603,6 +605,7 @@ h3 {
     }
     .block{
         width:100%;
+        overflow: visible;
     }
     .nav{
         width:100%;
@@ -639,5 +642,10 @@ h3 {
     .blank{
         width:0;
         height:0;
+    }
+    
+    .BioText{
+        margin-top: 0;
+        transform: none;
     }
 }
