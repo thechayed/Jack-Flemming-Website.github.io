@@ -574,6 +574,7 @@ h3 {
 
 /* For screens smaller than 768px */
 @media (orientation: portrait) {
+    
     .BioBlock{
         min-height: 0;
     }
@@ -647,5 +648,16 @@ h3 {
     .BioText{
         margin-top: 0;
         transform: none;
+    }
+}
+
+/* CSS rules for mobile devices */
+@media (max-device-width: 767px) and (orientation: portrait) {
+    html{
+        scroll-behavior: smooth;
+        --nav-font-size:1.5rem;
+        --font-size: 2rem;
+        --header-font-size: 3rem;
+        --header2-font-size: 2.5rem;
     }
 }
