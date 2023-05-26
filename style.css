@@ -660,4 +660,8 @@ h3 {
         --header-font-size: 3rem;
         --header2-font-size: 2.5rem;
     }
+    
+    .nav{
+        height: 6rem;
+    }
 }
