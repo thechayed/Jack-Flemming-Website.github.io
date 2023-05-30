@@ -55,6 +55,7 @@ h3 {
 .BioIMG{
     float:left; 
     position: relative; 
+    margin-top:5rem;
     left:0px; 
     height:auto;
     width:100%;
@@ -107,7 +108,7 @@ h3 {
     left: 0;
     width: 100%;
     height: fit-content;
-    z-index: 100;
+    z-index: 1009;
     border-bottom: solid thin slategray;
 }
 
@@ -260,6 +261,7 @@ h3 {
     align-items: center;
     flex-direction: column;
     width: 100%;
+    background: #000;
 }
 
 .float {
@@ -494,6 +496,9 @@ h3 {
     width:110%;
     border-bottom: dashed thin #00f;
     border-top: dashed thin #00f;
+    z-index:100;
+    margin: 0;
+    margin-top: 1rem;
 }
 
 .SubHeader{
@@ -590,6 +595,7 @@ h3 {
         right:0px;
         height: auto;
         scale:100%;
+        margin-top:0rem;
         transform: translateX(0%);
     }
     .gallery {
@@ -613,7 +619,6 @@ h3 {
         width:100%;
         left: 0px;
         right: 0px;
-        height: 4rem;
         margin-left:0;
         margin-right:0;
         justify-content: initial;
