@@ -578,9 +578,17 @@ h3 {
     flex-direction: column;
 }
 
+.BioSocialLinks{
+    margin-left: 2rem;
+}
+
 /* For screens smaller than 768px */
 @media (orientation: portrait) {
-    
+
+    .BioSocialLinks{
+        margin-left: 0rem;
+    }
+
     .BioBlock{
         min-height: 0;
     }
