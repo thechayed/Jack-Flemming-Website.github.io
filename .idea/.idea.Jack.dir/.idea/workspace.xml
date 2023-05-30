@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8977d1e1-74b9-4eb1-84c8-a09a6a7ace3c" name="Changes" comment="" />
+    <list default="true" id="8977d1e1-74b9-4eb1-84c8-a09a6a7ace3c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Jack.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Jack.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,6 +82,9 @@
       <workItem from="1684678350634" duration="4350000" />
       <workItem from="1684682871469" duration="8376000" />
       <workItem from="1685118798312" duration="702000" />
+      <workItem from="1685132359418" duration="1581000" />
+      <workItem from="1685208105603" duration="2834000" />
+      <workItem from="1685309005016" duration="27000" />
     </task>
     <servers />
   </component>

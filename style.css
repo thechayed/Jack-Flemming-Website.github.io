@@ -92,7 +92,7 @@ h3 {
 }
 
 .headerspace{
-    height: 48px;
+    height: 0px;
 }
 
 .header{
@@ -296,6 +296,8 @@ h3 {
     grid-gap: 8px;
     padding: 4rem;
     height: fit-content;
+    justify-content: center;
+    align-items: center;
 }
 .BioImage{
     transform:translateX(25%);
@@ -321,7 +323,6 @@ h3 {
     border-left: dashed thin #00f;
     border-right: dashed thin #00f;
     height: fit-content;
-    margin-top: 50%;
 }
 
 .BioText > p{
@@ -618,6 +619,7 @@ h3 {
         justify-content: initial;
         font-size: var(--font-size);
     }
+    
     .navItem{
         justify-content: center;
     }
