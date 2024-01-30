@@ -1,0 +1,15 @@
+#Reel
+{
+    display: block;
+    min-height: calc(40vh - 64px);
+    min-height: calc(40vh - 64px);
+    overflow: hidden;
+}
+
+#Reel *
+{
+    position:absolute;
+    inset: 0 !important;
+    width:100%;
+    border: none;
+}

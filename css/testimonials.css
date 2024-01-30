@@ -1,0 +1,91 @@
+
+
+testimonialcontainer
+{
+    display: flex;
+    flex-direction: row;
+    overflow:visible;
+}
+
+testimonials
+{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    max-width: 45%;
+    background: var(--background-color);
+
+    overflow:visible;
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+testimony
+{
+    margin: 8px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    overflow:visible;
+}
+
+.studio
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+#stdimg
+{
+    position: absolute;
+
+    width: auto;
+    height: auto;
+
+    min-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+testimony:before {
+    display: block;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    color: #777;
+}
+testimony:after {
+    display: block;
+    padding-left: 20px;
+    content: "\201D";
+    font-size: 80px;
+    position: absolute;
+    right: -20px;
+    bottom: -50px;
+    color: #777;
+}
+
+.testimonialAuthor{
+    color: #777;
+    font-size: calc(var(--font-size) - 0.1em);
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.testimonialAuthor:before {
+    content: "\2014 \2009";
+    color: #777;
+}

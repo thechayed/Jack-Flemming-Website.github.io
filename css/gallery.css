@@ -1,0 +1,100 @@
+
+.poster-container
+{
+    width: 100%;
+    aspect-ratio: 12/16;
+
+    display: block;
+}
+
+.poster
+{
+    
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+blackout
+{
+    transition: opacity 1s ease-in-out;
+
+    position:fixed;
+    inset: 0px;
+    background-color: #000;
+    opacity: 0;
+
+    z-index: 5;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+.poster-clamp
+{
+    position:absolute;
+    overflow: hidden;
+
+    left:0px;
+    top:0px;
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+    user-select: none;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poster-container:hover .poster-clamp, .poster-container:focus .poster-clamp
+{
+    transition: all 0.1s ease-in-out;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+    z-index: 100;
+}
+
+.poster-container:hover blackout, .poster-container:focus blackout
+{
+    transition: opacity 0.1s ease-in-out;
+    opacity: 0.5;
+}
+
+
+.poster-container:hover .poster-description-container, .poster-container:focus .poster-description-container
+{
+    transition: all 0.5s ease-in-out;
+    bottom: 0;
+}
+
+.poster-description-container
+{
+    position: absolute;
+
+    width: 100%;
+    bottom: -100%;
+
+    padding-top:10%;
+    padding-bottom:10%;
+
+    background-color: rgba(0,0,0,0.75);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.poster-description-container *
+{
+    color: var(--font-color-dim);
+}
