@@ -1,3 +1,4 @@
+
 *
 {
     --link-color: slategray;
@@ -54,10 +55,18 @@ header
 {
     width: 100%;
     min-height: var(--header-height);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content:space-between !important;
-    align-content: stretch;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack:justify !important;
+        -ms-flex-pack:justify !important;
+            justify-content:space-between !important;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
     overflow: visible;
     z-index: 10;
     border-bottom: slategray solid 0.1px;
@@ -65,11 +74,19 @@ header
 
 socials
 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
 
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     height: 100%;
     max-height: 100%;
@@ -78,11 +95,19 @@ socials
 
 socials *, socials * *, socials * * *
 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
 
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     height: 100%;
     max-height: 100%;
@@ -106,18 +131,31 @@ sociallink
 
 sociallink a:hover, sociallink a:focus
 {
+    -webkit-transition: -webkit-filter 0.25s ease-in-out;
+    transition: -webkit-filter 0.25s ease-in-out;
+    -o-transition: filter 0.25s ease-in-out;
     transition: filter 0.25s ease-in-out;
-    filter: invert(1) grayscale() brightness(2);
+    transition: filter 0.25s ease-in-out, -webkit-filter 0.25s ease-in-out;
+    -webkit-filter: invert(1) grayscale() brightness(2);
+            filter: invert(1) grayscale() brightness(2);
 }
 
 nav
 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
     height:100%;
 
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     margin-right: 1rem;
     min-height:100%;
@@ -127,12 +165,18 @@ nav
 nav *, nav * *, nav * * *
 {
     position:relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
     height:100%;
     min-height: 100%;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     overflow: visible;
 }
 
@@ -140,9 +184,17 @@ nav ul
 {
     list-style: none;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 nav ul li
@@ -158,6 +210,8 @@ nav ul li a
 
 nav ul li a:hover, nav ul li a:focus
 {
+    -webkit-transition: border 0.1s ease-in-out;
+    -o-transition: border 0.1s ease-in-out;
     transition: border 0.1s ease-in-out;
     color: white;
 }
@@ -169,6 +223,8 @@ nav ul li a::after{
     left: 0;
     right: 100%;
     background-color: rgba(0,0,0,0);
+    -webkit-transition: right 0.2s ease-in-out;
+    -o-transition: right 0.2s ease-in-out;
     transition: right 0.2s ease-in-out;
 }
 
@@ -189,6 +245,8 @@ nav ul li a::before{
     left: 100%;
     right: 0;
     background-color: rgba(0,0,0,0);
+    -webkit-transition: left 0.2s ease-in-out;
+    -o-transition: left 0.2s ease-in-out;
     transition: left 0.2s ease-in-out;
 }
 
@@ -203,19 +261,30 @@ nav ul li a:hover::before, nav ul li a:focus::before{
 
 h1
 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
     min-width:100%;
     background-color: var(--background-color);
     
     pointer-events: none;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     min-height: var(--header-element-size);
 
     font-size: var(--header-font-size);
 
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     vertical-align: middle;
 
     border-bottom: blue solid;
@@ -224,19 +293,30 @@ h1
 
 h2
 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
     min-width:100%;
     
     pointer-events: none;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     min-height: var(--header-element-size);
 
     font-size: var(--header2-font-size);
     font-weight: lighter;
 
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     vertical-align: middle;
 
     
@@ -246,7 +326,10 @@ h2
 p
 {
     pointer-events: none;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 a
@@ -259,7 +342,11 @@ content
     overflow-x: hidden;
     overflow-y: scroll;
     
-    align-items: center;
+    -webkit-box-align: center;
+    
+        -ms-flex-align: center;
+    
+            align-items: center;
 }
 
 content::-webkit-scrollbar
@@ -303,10 +390,21 @@ gallery
 {
     max-width: 100%;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     overflow: visible;
 }
@@ -318,8 +416,11 @@ gallery *
 
 production
 {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: (1fr)[4];
     grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: -webkit-max-content;
     grid-auto-rows: max-content;
     width: 90%;
     height: 100%;
@@ -331,8 +432,14 @@ galleryitem
 {
     display: block;
 
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     
     overflow: visible;
 }
@@ -340,20 +447,38 @@ galleryitem
 
 .flex-row
 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .flex-column
 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .height-fit-content
 {
+    height:-webkit-fit-content;
+    height:-moz-fit-content;
     height:fit-content;
 }
