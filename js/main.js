@@ -31,12 +31,6 @@ galleryItemElements.forEach(element =>
         focusedPoster = posterContainer;
     })
 
-    // Disable clicking on a poster redirecting the site
-    element.addEventListener('touchstart', function(e)
-    {
-        e.preventDefault();
-        focusedPoster = posterContainer;
-    })
 
 
     // Create the Poster Clamp to cut off the edges of the Poster
