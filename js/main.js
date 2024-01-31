@@ -43,7 +43,6 @@ galleryItemElements.forEach(element =>
     // Disable clicking on a poster redirecting the site
     element.addEventListener('touchstart', function(e)
     {
-        e.preventDefault();
         focusedPoster = posterContainer;
     })
 
