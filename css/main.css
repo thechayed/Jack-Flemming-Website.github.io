@@ -140,6 +140,11 @@ sociallink a:hover, sociallink a:focus
             filter: invert(1) grayscale() brightness(2);
 }
 
+header img
+{
+    height: 75%;
+}
+
 nav
 {
     display: -webkit-box;
@@ -189,9 +194,9 @@ nav ul
     display: -ms-flexbox;
 
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack:justify !important;
+        -ms-flex-pack:justify !important;
+            justify-content:space-between !important;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -322,6 +327,11 @@ h2
 
     
     border-bottom: slategray solid 0.1px;
+}
+
+h4
+{
+    font-weight: 100;
 }
 
 p

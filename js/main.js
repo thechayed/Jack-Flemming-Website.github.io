@@ -1,5 +1,7 @@
 var content = document.querySelectorAll("content")[0];
+var socialsContainer = document.querySelectorAll("socials")[0];
 var headshotElement = document.getElementById("Headshot");
+var headerLogo = document.getElementById("Header Logo");
 
 var socialLinkElements = document.querySelectorAll('sociallink');
 var galleryElements = document.querySelectorAll('gallery');
@@ -63,18 +65,18 @@ galleryItemElements.forEach(element =>
     posterClamp.appendChild(posterDescritionContainer);
     posterDescritionContainer.setAttribute('class', 'poster-description-container');
 
-    var descriptionTitle = document.createElement('p');
+    var descriptionTitle = document.createElement('h3');
     posterDescritionContainer.appendChild(descriptionTitle);
     descriptionTitle.setAttribute('class', 'poster-description-title');
     descriptionTitle.textContent = element.getAttribute('title');
 
-    var descriptionProducer = document.createElement('p');
+    var descriptionProducer = document.createElement('h4');
     posterDescritionContainer.appendChild(descriptionProducer);
     descriptionProducer.setAttribute('class', 'poster-description-producer');
     descriptionProducer.textContent = element.getAttribute('producer');
 
 
-    var descriptionJobTitle = document.createElement('p');
+    var descriptionJobTitle = document.createElement('h4');
     posterDescritionContainer.appendChild(descriptionJobTitle);
     descriptionJobTitle.setAttribute('class', 'poster-description-job-title');
     descriptionJobTitle.textContent = element.getAttribute('job');
@@ -158,6 +160,9 @@ var tween = new TWEEN.Tween(scrollPosition, false)
             });
 });
 
+var imdbLink = document.getElementById("IMDb_Link");
+var instaLink = document.getElementById("Insta_Link");
+
 function ScrollRenderLoop(time) {
     window.requestAnimationFrame(ScrollRenderLoop);
     if(autoScroll)
@@ -170,5 +175,27 @@ function ScrollRenderLoop(time) {
     //     document.activeElement.blur();
     //     previousScrollY = Math.round(headshotElement.getBoundingClientRect().top);
     // }
+
+    headerLogo.style.display = 'block';
+    if(Math.abs((headerLogo.offsetHeight / headerLogo.offsetWidth) - (headerLogo.naturalHeight / headerLogo.naturalWidth)) < 0.1)
+    {
+        headerLogo.style.opacity = '1';
+        headerLogo.style.display = 'block';
+    }
+    else
+    {
+        headerLogo.style.opacity = '0';
+        headerLogo.style.display = 'none';
+    }
+
+    socialsContainer.style.display = 'flex';
+    if(socialsContainer.offsetWidth < imdbLink.offsetWidth + instaLink.offsetWidth - 16)
+    {
+        socialsContainer.style.display = 'none';
+    }
+    else
+    {
+        socialsContainer.style.display = 'flex';
+    }
 }
 window.requestAnimationFrame(ScrollRenderLoop);

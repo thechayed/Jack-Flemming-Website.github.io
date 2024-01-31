@@ -10,3 +10,7 @@
 #Reel div{
     height: 100%;
 }
+
+#Reel iframe{
+    border: none;
+}
