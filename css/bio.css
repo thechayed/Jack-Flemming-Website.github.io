@@ -4,11 +4,11 @@
     display:-ms-flexbox;
     display:flex;
 
-    min-height: 60vh;
-    min-height: 60svh;
+    min-height: 50vh;
+    min-height: 50svh;
 
-    max-height: 60vh;
-    max-height: 60svh;
+    max-height: 50vh;
+    max-height: 50svh;
 
     -webkit-box-pack: center;
 
@@ -34,11 +34,11 @@
 
     width: 100%;
 
-    min-height: 60vh;
-    min-height: 60svh;
+    min-height: 50vh;
+    min-height: 50svh;
 
-    max-height: 60vh;
-    max-height: 60svh;
+    max-height: 50vh;
+    max-height: 50svh;
 
     background-image: -o-linear-gradient(35deg, black, rgba(0, 0, 0, 0.75),transparent);
 
