@@ -30,8 +30,12 @@ galleryItemElements.forEach(element =>
         e.preventDefault();
         focusedPoster = posterContainer;
     })
-
-
+    // Disable clicking on a poster redirecting the site
+    element.addEventListener('touchstart', function(e)
+    {
+        e.preventDefault();
+        focusedPoster = posterContainer;
+    })
 
     // Create the Poster Clamp to cut off the edges of the Poster
     var posterClamp = document.createElement('div');
@@ -102,7 +106,7 @@ function PosterRenderLoop() {
             }
             if(focusedPoster != null && element.matches(":hover") && focusedPoster != element)
             {
-                focusedPoster.blur();
+                //focusedPoster.blur();
             }
         })
     window.requestAnimationFrame(PosterRenderLoop);
