@@ -1,4 +1,5 @@
 var content = document.querySelectorAll("content")[0];
+var headshotElement = document.getElementById("Headshot");
 var socialLinkElements = document.querySelectorAll('sociallink');
 var galleryElements = document.querySelectorAll('gallery');
 var productionElements = document.querySelectorAll('production');
@@ -7,6 +8,7 @@ var navLinkElements = document.querySelectorAll('a');
 var testimonyElements = document.querySelectorAll('testimony');
 var posterContainerElements = [];
 var focusedPoster;
+var previousScrollY;
 
 // Create the Blackout for the poster to dim the rest of the screen
 var posterBlackout = document.createElement('blackout');
@@ -142,15 +144,11 @@ function ScrollRenderLoop(time) {
     window.requestAnimationFrame(ScrollRenderLoop);
     if(autoScroll)
         tween.update(time);
+
+    if(previousScrollY != headshotElement.getBoundingClientRect().top)
+    {
+        document.activeElement.blur();
+        previousScrollY = headshotElement.getBoundingClientRect().top;
+    }
 }
 window.requestAnimationFrame(ScrollRenderLoop);
-
-
-content.addEventListener('scroll', function(event) {
-    document.activeElement.blur();
-  });
-  
-  
-  content.addEventListener('touchmove', function(event) {
-    document.activeElement.blur();
-});
