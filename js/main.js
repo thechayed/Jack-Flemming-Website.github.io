@@ -147,12 +147,12 @@ function ScrollRenderLoop(time) {
     if(autoScroll)
         tween.update(time);
 
-    if(previousScrollY != headshotElement.getBoundingClientRect().top)
+    if(previousScrollY != Math.round(headshotElement.getBoundingClientRect().top))
     {
         if(focusedPoster != null)
             focusedPoster.blur();
         document.activeElement.blur();
-        previousScrollY = headshotElement.getBoundingClientRect().top;
+        previousScrollY = Math.round(headshotElement.getBoundingClientRect().top);
         console.log(headshotElement.getBoundingClientRect().top);
     }
 }
