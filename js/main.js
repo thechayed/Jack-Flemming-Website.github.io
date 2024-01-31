@@ -151,6 +151,6 @@ content.addEventListener('scroll', function(event) {
   });
   
   
-element.addEventListener('touchmove', function(event) {
+  content.addEventListener('touchmove', function(event) {
     document.activeElement.blur();
 });
