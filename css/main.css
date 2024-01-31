@@ -327,6 +327,7 @@ h2
 
     
     border-bottom: slategray solid 0.1px;
+    border-top: #333 solid 0.1px;
 }
 
 h4
@@ -346,6 +347,7 @@ p
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+    text-align: center;
 }
 
 a
