@@ -158,6 +158,3 @@ function ScrollRenderLoop(time) {
 }
 window.requestAnimationFrame(ScrollRenderLoop);
 
-content.addEventListener('touchmove', function(event) {
-    document.activeElement.blur();
-});
