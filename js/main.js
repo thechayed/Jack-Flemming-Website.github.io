@@ -113,18 +113,22 @@ var tween = new TWEEN.Tween(scrollPosition, false)
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            scrollPosition.y = content.scrollTop;
-            autoScroll = true; 
-            e.preventDefault();
-            var targetElement = document.querySelector(this.getAttribute('href'));
+            if(!this.getAttribute('href').includes("Work"))
+            {
+                scrollPosition.y = content.scrollTop;
+                autoScroll = true; 
+                e.preventDefault();
 
-            tween = new TWEEN.Tween(scrollPosition, false) 
-                .to({y: targetElement.offsetTop}, 500) 
-                .easing(TWEEN.Easing.Cubic.Out) 
-                .onUpdate(() => {
-                    content.scroll({top: scrollPosition.y});
-                })
-                .start() 
+                var targetElement = document.querySelector(this.getAttribute('href'));
+
+                tween = new TWEEN.Tween(scrollPosition, false) 
+                    .to({y: targetElement.offsetTop}, 500) 
+                    .easing(TWEEN.Easing.Cubic.Out) 
+                    .onUpdate(() => {
+                        content.scroll({top: scrollPosition.y});
+                    })
+                    .start() 
+                }
             });
 });
 
