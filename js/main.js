@@ -1,17 +1,28 @@
 var content = document.querySelectorAll("content")[0];
 var headshotElement = document.getElementById("Headshot");
+
 var socialLinkElements = document.querySelectorAll('sociallink');
 var galleryElements = document.querySelectorAll('gallery');
 var productionElements = document.querySelectorAll('production');
 var galleryItemElements = document.querySelectorAll('galleryitem');
 var navLinkElements = document.querySelectorAll('a');
 var testimonyElements = document.querySelectorAll('testimony');
+
 var posterContainerElements = [];
 var focusedPoster;
 var previousScrollY;
 
 // Create the Blackout for the poster to dim the rest of the screen
 var posterBlackout = document.createElement('blackout');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) =>
+    {
+        if(!entry.isIntersecting && (entry.target.matches(":hover") | entry.target.matches(":focus")))
+            entry.target.blur();
+    });
+    console.log(entries);
+});
 
 // Create the Gallery Items
 galleryItemElements.forEach(element =>
@@ -36,6 +47,8 @@ galleryItemElements.forEach(element =>
         e.preventDefault();
         focusedPoster = posterContainer;
     })
+
+    observer.observe(posterContainer);
 
     // Create the Poster Clamp to cut off the edges of the Poster
     var posterClamp = document.createElement('div');
@@ -106,7 +119,8 @@ function PosterRenderLoop() {
             }
             if(focusedPoster != null && element.matches(":hover") && focusedPoster != element)
             {
-                //focusedPoster.blur();
+                focusedPoster.blur();
+                element.focus();
             }
         })
     window.requestAnimationFrame(PosterRenderLoop);
@@ -151,14 +165,12 @@ function ScrollRenderLoop(time) {
     if(autoScroll)
         tween.update(time);
 
-    if(previousScrollY != Math.round(headshotElement.getBoundingClientRect().top))
-    {
-        if(focusedPoster != null)
-            focusedPoster.blur();
-        document.activeElement.blur();
-        previousScrollY = Math.round(headshotElement.getBoundingClientRect().top);
-        console.log(headshotElement.getBoundingClientRect().top);
-    }
+    // if(previousScrollY != Math.round(headshotElement.getBoundingClientRect().top))
+    // {
+    //     if(focusedPoster != null)
+    //         focusedPoster.blur();
+    //     document.activeElement.blur();
+    //     previousScrollY = Math.round(headshotElement.getBoundingClientRect().top);
+    // }
 }
 window.requestAnimationFrame(ScrollRenderLoop);
-
