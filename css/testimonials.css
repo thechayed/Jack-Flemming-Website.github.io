@@ -38,7 +38,7 @@ testimonials
     padding-bottom: 16px;
 }
 
-testimony
+.testimony
 {
     margin: 8px;
     padding: 8px;
@@ -84,7 +84,7 @@ testimony
     max-height: 100%;
 }
 
-testimony:before {
+.testimony:before {
     display: block;
     content: "\201C";
     font-size: 80px;
@@ -93,7 +93,7 @@ testimony:before {
     top: -20px;
     color: #777;
 }
-testimony:after {
+.testimony:after {
     display: block;
     padding-left: 20px;
     content: "\201D";
