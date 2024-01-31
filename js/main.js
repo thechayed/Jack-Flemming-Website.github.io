@@ -76,7 +76,7 @@ galleryItemElements.forEach(element =>
     descriptionProducer.textContent = element.getAttribute('producer');
 
 
-    var descriptionJobTitle = document.createElement('h4');
+    var descriptionJobTitle = document.createElement('h5');
     posterDescritionContainer.appendChild(descriptionJobTitle);
     descriptionJobTitle.setAttribute('class', 'poster-description-job-title');
     descriptionJobTitle.textContent = element.getAttribute('job');
