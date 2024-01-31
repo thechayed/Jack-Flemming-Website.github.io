@@ -6,6 +6,7 @@ var galleryItemElements = document.querySelectorAll('galleryitem');
 var navLinkElements = document.querySelectorAll('a');
 var testimonyElements = document.querySelectorAll('testimony');
 var posterContainerElements = [];
+var focusedPoster;
 
 // Create the Blackout for the poster to dim the rest of the screen
 var posterBlackout = document.createElement('blackout');
@@ -24,7 +25,8 @@ galleryItemElements.forEach(element =>
     // Disable clicking on a poster redirecting the site
     element.addEventListener('click', function(e)
     {
-        event.preventDefault();
+        e.preventDefault();
+        focusedPoster = posterContainer;
     })
 
     // Create the Poster Clamp to cut off the edges of the Poster
@@ -94,6 +96,10 @@ function PosterRenderLoop() {
             {
                 element.appendChild(posterBlackout);
             }
+            if(focusedPoster != null && element.matches(":hover") && focusedPoster != element)
+            {
+                focusedPoster.blur();
+            }
         })
     window.requestAnimationFrame(PosterRenderLoop);
 }
@@ -138,3 +144,9 @@ function ScrollRenderLoop(time) {
         tween.update(time);
 }
 window.requestAnimationFrame(ScrollRenderLoop);
+
+
+content.addEventListener('scroll', function(event) {
+    document.activeElement.blur();
+  });
+  
