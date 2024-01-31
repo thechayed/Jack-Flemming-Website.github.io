@@ -150,3 +150,7 @@ content.addEventListener('scroll', function(event) {
     document.activeElement.blur();
   });
   
+  
+element.addEventListener('touchmove', function(event) {
+    document.activeElement.blur();
+});
