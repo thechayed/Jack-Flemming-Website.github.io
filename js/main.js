@@ -21,7 +21,6 @@ const observer = new IntersectionObserver((entries) => {
         if(!entry.isIntersecting && (entry.target.matches(":hover") | entry.target.matches(":focus")))
             entry.target.blur();
     });
-    console.log(entries);
 });
 
 // Create the Gallery Items
