@@ -147,6 +147,8 @@ function ScrollRenderLoop(time) {
 
     if(previousScrollY != headshotElement.getBoundingClientRect().top)
     {
+        if(focusedPoster != null)
+            focusedPoster.blur();
         document.activeElement.blur();
         previousScrollY = headshotElement.getBoundingClientRect().top;
     }
