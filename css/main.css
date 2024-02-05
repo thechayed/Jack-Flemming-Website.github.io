@@ -1,5 +1,4 @@
-
-*
+:root
 {
     --link-color: slategray;
     --font-color: #fff;
@@ -17,7 +16,12 @@
     --scrollbar-thumb-color: black;
 
     --background-color: #151518ff;
-    
+
+    --refresh-indicator-pseudo-rotation: 0deg;
+}
+
+*
+{
     float:left;
     position:relative;
     overflow: hidden;
@@ -29,6 +33,9 @@
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     color: var(--font-color);
     font-size: var(--font-size);
+
+    touch-action: pan-y;
+        -ms-touch-action: pan-y;
 }
 
 div, form
@@ -499,4 +506,48 @@ galleryitem
     height:-webkit-fit-content;
     height:-moz-fit-content;
     height:fit-content;
+}
+
+.scroll-refresh-indicator
+{
+    float:left;
+    position:fixed;
+
+    width: 80px;
+    height: 80px;
+
+    border: solid blue 4px;
+    border-radius: 100%;
+    z-index:777;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-refresh-indicator:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 32px solid #fff;
+    border-color: white transparent white transparent;
+    transform: rotate(var(--refresh-indicator-pseudo-rotation));
+}
+
+.scroll-refresh-indicator.scroll-refresh-on-refresh:after
+{
+    animation: lds-hourglass 1.2s infinite;
+}
+
+
+@keyframes lds-hourglass {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(1800deg);
+    }
 }

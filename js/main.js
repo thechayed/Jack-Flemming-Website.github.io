@@ -1,4 +1,8 @@
+// Get the root element
+var root = document.documentElement;
+
 var content = document.querySelectorAll("content")[0];
+var header = document.querySelectorAll("header")[0];
 var socialsContainer = document.querySelectorAll("socials")[0];
 var headshotElement = document.getElementById("Headshot");
 var headerLogo = document.getElementById("Header Logo");
@@ -9,6 +13,8 @@ var productionElements = document.querySelectorAll('production');
 var galleryItemElements = document.querySelectorAll('galleryitem');
 var navLinkElements = document.querySelectorAll('a');
 var testimonyElements = document.querySelectorAll('testimony');
+
+const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
 var posterContainerElements = [];
 var focusedPoster;
@@ -163,6 +169,7 @@ var tween = new TWEEN.Tween(scrollPosition, false)
 var imdbLink = document.getElementById("IMDb_Link");
 var instaLink = document.getElementById("Insta_Link");
 
+
 function ScrollRenderLoop(time) {
     window.requestAnimationFrame(ScrollRenderLoop);
     if(autoScroll)
@@ -176,6 +183,8 @@ function ScrollRenderLoop(time) {
     //     previousScrollY = Math.round(headshotElement.getBoundingClientRect().top);
     // }
 
+    var hiddenElements = 0;
+
     headerLogo.style.display = 'block';
     if(Math.abs((headerLogo.offsetHeight / headerLogo.offsetWidth) - (headerLogo.naturalHeight / headerLogo.naturalWidth)) < 0.1)
     {
@@ -186,16 +195,114 @@ function ScrollRenderLoop(time) {
     {
         headerLogo.style.opacity = '0';
         headerLogo.style.display = 'none';
+        hiddenElements++;
     }
 
     socialsContainer.style.display = 'flex';
     if(socialsContainer.offsetWidth < imdbLink.offsetWidth + instaLink.offsetWidth - 16)
     {
         socialsContainer.style.display = 'none';
+        hiddenElements++;
     }
     else
     {
         socialsContainer.style.display = 'flex';
     }
+
+    if(hiddenElements >= 2)
+    {
+        header.setAttribute('style', 'justify-content: center !important');
+    }
+    else
+    {
+        header.setAttribute('style', 'justify-content: space-between !important');
+    }
+    
 }
 window.requestAnimationFrame(ScrollRenderLoop);
+
+
+var refreshStartY = 0;
+var canRefresh = false;
+var scrolling = false;
+var refresh = false;
+const touchMoveDistanceToScrollPercent = 0.25;   
+// If touch 
+var currentRefreshDistance = 0;
+var currentRefreshPercent = 0;
+
+var refreshDiv = document.createElement("div");
+var refreshGif = document.createElement("img");
+
+
+document.addEventListener("touchstart", event =>
+{
+    if(content.getBoundingClientRect().top === 0)
+        canRefresh = true;
+    refreshStartY = event.touches[0].pageY;
+});
+
+document.addEventListener("touchmove", event =>
+{
+    if(content.getBoundingClientRect().top != 0)
+        canRefresh = false;
+    if(content.scrollTop == 0 && !canRefresh)
+    {
+        canRefresh = true;
+    }
+
+    if(canRefresh)
+    {
+        currentRefreshDistance = clamp(event.touches[0].pageY - refreshStartY, 0, touchMoveDistanceToScrollPercent * document.documentElement.clientHeight);
+
+        if(currentRefreshDistance >= touchMoveDistanceToScrollPercent * document.documentElement.clientHeight)
+        {
+            refresh = true;
+        }
+        else
+        {
+            refresh = false;
+        }
+    }
+    else
+    {
+        refresh = false;
+    }
+});
+
+document.addEventListener("touchend", event =>
+{
+    if(refresh)
+    {
+        setTimeout(() => location.reload(), 1000);
+    }
+    currentRefreshDistance = 0;
+});
+
+var scrollRefreshIndicator = document.createElement("div");
+document.body.appendChild(scrollRefreshIndicator);
+scrollRefreshIndicator.style.top = "-100px";
+scrollRefreshIndicator.className = "scroll-refresh-indicator";
+
+function ScrollRenderLoop(time) 
+{
+    currentRefreshPercent = currentRefreshDistance / (touchMoveDistanceToScrollPercent * document.documentElement.clientHeight);
+    if(!refresh)
+    {
+        scrollRefreshIndicator.style.top = lerp(parseFloat(scrollRefreshIndicator.style.top), -100 + (currentRefreshPercent * 200), 0.1) + "px";
+        root.style.setProperty("--refresh-indicator-pseudo-rotation", lerp(parseFloat(getComputedStyle(root).getPropertyValue("--refresh-indicator-pseudo-rotation").replace("deg"), ""), (currentRefreshPercent * 180), 0.1) + "deg");
+        scrollRefreshIndicator.classList.remove("scroll-refresh-on-refresh");
+    }
+    else
+    {
+        scrollRefreshIndicator.style.top = "100px";
+        scrollRefreshIndicator.classList.add("scroll-refresh-on-refresh");
+    }
+
+    window.requestAnimationFrame(ScrollRenderLoop);
+}
+window.requestAnimationFrame(ScrollRenderLoop);
+
+function lerp(start, end, amt) {
+    return (1 - amt) * start + amt * end;
+  }
