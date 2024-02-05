@@ -3,10 +3,10 @@
     --link-color: slategray;
     --font-color: #fff;
     --font-color-dim: calc(slategray + white/5); 
-    
-    --header-height: 64px; 
+    --header-height: 5vh; 
     --nav-font-size:1.25rem;
     --font-size: 0.9rem;
+    
     --header-font-size: 1.5rem;
     --header-element-size: 48px;
     --header2-font-size: 1.25rem;
