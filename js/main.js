@@ -160,8 +160,9 @@ var tween = new TWEEN.Tween(scrollPosition, false)
                     .easing(TWEEN.Easing.Cubic.Out) 
                     .onUpdate(() => {
                         content.scroll({top: scrollPosition.y});
-                    })
-                    .start() 
+                    });
+                tween.start();
+                
                 }
             });
 });
@@ -171,7 +172,6 @@ var instaLink = document.getElementById("Insta_Link");
 
 
 function ScrollRenderLoop(time) {
-    window.requestAnimationFrame(ScrollRenderLoop);
     if(autoScroll)
         tween.update(time);
 
@@ -218,6 +218,7 @@ function ScrollRenderLoop(time) {
         header.setAttribute('style', 'justify-content: space-between !important');
     }
     
+    window.requestAnimationFrame(ScrollRenderLoop);
 }
 window.requestAnimationFrame(ScrollRenderLoop);
 
@@ -284,7 +285,7 @@ document.body.appendChild(scrollRefreshIndicator);
 scrollRefreshIndicator.style.top = "-100px";
 scrollRefreshIndicator.className = "scroll-refresh-indicator";
 
-function ScrollRenderLoop(time) 
+function RefreshLoop(time) 
 {
     currentRefreshPercent = currentRefreshDistance / (touchMoveDistanceToScrollPercent * document.documentElement.clientHeight);
     if(!refresh)
@@ -299,9 +300,9 @@ function ScrollRenderLoop(time)
         scrollRefreshIndicator.classList.add("scroll-refresh-on-refresh");
     }
 
-    window.requestAnimationFrame(ScrollRenderLoop);
+    window.requestAnimationFrame(RefreshLoop);
 }
-window.requestAnimationFrame(ScrollRenderLoop);
+window.requestAnimationFrame(RefreshLoop);
 
 function lerp(start, end, amt) {
     return (1 - amt) * start + amt * end;

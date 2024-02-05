@@ -360,6 +360,9 @@ p
 a
 {
     color: var(--link-color);
+    
+    touch-action: initial;
+        -ms-touch-action: initial;
 }
 
 content
