@@ -1,17 +1,17 @@
 // Device dependent properties
-const desktopHeadHeight = 5;
-const mobileHeadHeight = 10;
+const desktopHeadHeight = 64;
+const mobileHeadHeight = 128;
 
 const desktopNavFontSize = 1.25;
-const mobileNavFontSize = 2;
+const mobileNavFontSize = 3.5;
 
 const desktopFontSize = 0.9;
-const mobileFontSize = 1;
+const mobileFontSize = 1.5;
 
 // Get the root element
 var root = document.documentElement;
 
-if(isMobile())
+if(isMobile)
 {
     root.style.setProperty("--header-height", mobileHeadHeight + "px");
     root.style.setProperty("--nav-font-size", mobileNavFontSize + "px");
@@ -214,7 +214,7 @@ function ScrollRenderLoop(time) {
     }
 
     socialsContainer.style.display = 'flex';
-    if(socialsContainer.offsetWidth < imdbLink.offsetWidth + instaLink.offsetWidth - 16)
+    if(socialsContainer.offsetWidth < imdbLink.offsetWidth + instaLink.offsetWidth)
     {
         socialsContainer.style.display = 'none';
         hiddenElements++;
@@ -300,18 +300,30 @@ document.body.appendChild(scrollRefreshIndicator);
 scrollRefreshIndicator.style.top = "-100px";
 scrollRefreshIndicator.className = "scroll-refresh-indicator";
 
+var scrollRefreshIndicatorSymbolContainer = document.createElement("div");
+scrollRefreshIndicator.appendChild(scrollRefreshIndicatorSymbolContainer);
+scrollRefreshIndicatorSymbolContainer.className = "scroll-refresh-symbol-container";
+
+var scrollRefreshSymbol = document.createElement("p");
+scrollRefreshIndicatorSymbolContainer.appendChild(scrollRefreshSymbol);
+scrollRefreshSymbol.className = "scroll-refresh-symbol";
+scrollRefreshSymbol.innerText = "𝄞";
+
 function RefreshLoop(time) 
 {
     currentRefreshPercent = currentRefreshDistance / (touchMoveDistanceToScrollPercent * document.documentElement.clientHeight);
     if(!refresh)
     {
-        scrollRefreshIndicator.style.top = lerp(parseFloat(scrollRefreshIndicator.style.top), -100 + (currentRefreshPercent * 200), 0.1) + "px";
-        root.style.setProperty("--refresh-indicator-pseudo-rotation", lerp(parseFloat(getComputedStyle(root).getPropertyValue("--refresh-indicator-pseudo-rotation").replace("deg"), ""), (currentRefreshPercent * 180), 0.1) + "deg");
+        var currentRotation = parseFloat(getComputedStyle(root).getPropertyValue("--refresh-indicator-pseudo-rotation").replace("deg", ""));
+        scrollRefreshIndicator.style.top = lerp(parseFloat(scrollRefreshIndicator.style.top), -100 + (currentRefreshPercent * 300), 0.75) + "px";
+        root.style.setProperty("--refresh-indicator-pseudo-rotation", lerp(currentRotation,  180 + (currentRefreshPercent * 180), 0.75) + "deg");
         scrollRefreshIndicator.classList.remove("scroll-refresh-on-refresh");
     }
     else
     {
-        scrollRefreshIndicator.style.top = "100px";
+        var currentRotation = parseFloat(getComputedStyle(root).getPropertyValue("--refresh-indicator-pseudo-rotation").replace("deg", ""));
+        scrollRefreshIndicator.style.top = lerp(parseFloat(scrollRefreshIndicator.style.top), 200, 0.75) + "px";
+        root.style.setProperty("--refresh-indicator-pseudo-rotation", lerp(currentRotation,  180 + (currentRefreshPercent * 180), 0.5) + "deg");
         scrollRefreshIndicator.classList.add("scroll-refresh-on-refresh");
     }
 

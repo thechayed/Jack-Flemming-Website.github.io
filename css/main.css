@@ -3,10 +3,10 @@
     --link-color: slategray;
     --font-color: #fff;
     --font-color-dim: calc(slategray + white/5); 
-    --header-height: 5vh; 
+    --header-height: 64px; 
     --nav-font-size:1.25rem;
     --font-size: 0.9rem;
-    
+
     --header-font-size: 1.5rem;
     --header-element-size: 48px;
     --header2-font-size: 1.25rem;
@@ -16,7 +16,6 @@
     --scrollbar-thumb-color: black;
 
     --background-color: #151518ff;
-
     --refresh-indicator-pseudo-rotation: 0deg;
 }
 
@@ -77,6 +76,7 @@ header
     overflow: visible;
     z-index: 10;
     border-bottom: slategray solid 0.1px;
+    background: var(--background-color);
 }
 
 socials
@@ -521,36 +521,63 @@ galleryitem
 
     border: solid blue 4px;
     border-radius: 100%;
-    z-index:777;
+    z-index:7;
 
     left: 50%;
     transform: translateX(-50%);
 }
 
-.scroll-refresh-indicator:after {
-    content: " ";
-    display: block;
-    border-radius: 50%;
-    width: 0;
-    height: 0;
-    margin: 8px;
-    box-sizing: border-box;
-    border: 32px solid #fff;
-    border-color: white transparent white transparent;
-    transform: rotate(var(--refresh-indicator-pseudo-rotation));
-}
-
-.scroll-refresh-indicator.scroll-refresh-on-refresh:after
+.scroll-refresh-symbol-container
 {
-    animation: lds-hourglass 1.2s infinite;
+    position:absolute;
+    inset: 0;
+    display: flex;
+    border-radius: 50%;
+    transform: rotate(var(--refresh-indicator-pseudo-rotation));
+    justify-content: center;
+    align-items: center;
 }
 
-
-@keyframes lds-hourglass {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(1800deg);
-    }
+.scroll-refresh-symbol{
+    inset: 0;
+    box-sizing: border-box;
+    color: white;
+    font-size: 75px;
+    text-align: left;
 }
+
+.scroll-refresh-on-refresh .scroll-refresh-symbol-container .scroll-refresh-symbol
+{
+    animation: wiggle 1s infinite;
+}
+
+.scroll-refresh-on-refresh .scroll-refresh-symbol-container
+{
+    transform: rotate(0);
+}
+
+/* @-webkit-keyframes wiggle {
+    0% {-webkit-transform: rotate(0deg) scale(1);}
+    25% {-webkit-transform: rotate(-10deg);}
+    50% {-webkit-transform: rotate(20deg) scale(2);}
+    75% {-webkit-transform: rotate(-20deg);}
+    100% {-webkit-transform: rotate(0deg) scale(1);}
+  }
+  
+  @-ms-keyframes wiggle {
+    0% {-webkit-transform: rotate(0deg) scale(1);}
+    25% {-webkit-transform: rotate(-10deg);}
+    50% {-webkit-transform: rotate(10deg) scale(2);}
+    75% {-webkit-transform: rotate(-20deg);}
+    100% {-webkit-transform: rotate(0deg) scale(1);}
+  }
+   */
+  @keyframes wiggle {
+    0% {transform: rotate(0deg) scale(1);}
+    12.5% {transform: rotate(10deg) scale(2);}
+    25% {transform: rotate(-10deg) scale(2);}
+    37% {transform: rotate(20deg) scale(2);}
+    50% {transform: rotate(-5deg) scale(2);}
+    62.5% {transform: rotate(0deg) scale(2);}
+    100% {transform: scale(1);}
+  }
