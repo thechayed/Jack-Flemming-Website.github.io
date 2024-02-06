@@ -525,6 +525,8 @@ galleryitem
 
     left: 50%;
     transform: translateX(-50%);
+
+    overflow: visible;
 }
 
 .scroll-refresh-symbol-container
@@ -536,6 +538,7 @@ galleryitem
     transform: rotate(var(--refresh-indicator-pseudo-rotation));
     justify-content: center;
     align-items: center;
+    overflow: visible;
 }
 
 .scroll-refresh-symbol{
@@ -544,6 +547,7 @@ galleryitem
     color: white;
     font-size: 75px;
     text-align: left;
+    overflow: visible;
 }
 
 .scroll-refresh-on-refresh .scroll-refresh-symbol-container .scroll-refresh-symbol
