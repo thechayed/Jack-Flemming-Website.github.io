@@ -1,3 +1,13 @@
+#BioImageContainer
+{
+    position:absolute;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width:100%;
+}
+
 #Headshot
 {
     display:-webkit-box;
@@ -87,6 +97,9 @@
     min-height: 125%;
     width:auto;
     min-width:125%;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    margin-left:50%;
 }
 
 .bio-container

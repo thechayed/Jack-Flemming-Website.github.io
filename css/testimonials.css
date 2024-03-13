@@ -9,6 +9,7 @@ testimonialcontainer
             flex-direction: row;
     overflow:visible;
     background: black;
+    height:auto !important;
 }
 
 testimonials
@@ -29,13 +30,11 @@ testimonials
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-
-    max-width: 45%;
-
     overflow:visible;
 
     padding-top: 16px;
     padding-bottom: 16px;
+    height:auto !important;
 }
 
 .testimony
@@ -121,3 +120,23 @@ testimonials
     content: "\2014 \2009";
     color: #777;
 }
+
+@media only screen and (max-width: 768px) {
+    testimonials
+    {
+        position:absolute;
+        min-height:100vh;
+    }
+    testimonialcontainer
+    {
+        display:inherit;
+        min-height:100vh !important;
+    }
+        
+    .studio
+    {
+        position:absolute !important;
+        inset:0;
+        opacity: 0.5;
+    }
+  }
