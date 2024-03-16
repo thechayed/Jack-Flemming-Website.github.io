@@ -14,3 +14,60 @@
 #Reel iframe{
     border: none;
 }
+
+#ReelScrollUXContainer
+{
+    width: 64px !important;
+    height: 160px !important;
+    position:absolute;
+    bottom: 32px;
+    right: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:10;
+}
+
+.touch-circle
+{
+    background: blue;
+    width: 32px !important;
+    height: 32px !important;
+    animation: swipe 1.5s infinite;
+    border-radius: 100%;
+    opacity: 0.5;
+}
+
+@keyframes swipe {
+    0%
+    {
+        margin-bottom:0;
+        border: 16px solid white;
+        opacity: 0.75;
+    }
+    5%
+    {
+        border: 5px dotted white;
+    }
+    5%
+    {
+        border: 0px dotted white;
+    }
+    75%
+    {
+        margin-bottom:160px;
+        border: 4px solid white;
+    }
+    95%
+    {
+        margin-bottom:160px;
+        border: 4px solid white;
+        opacity: 0.1;
+    }
+    100%
+    {
+        margin-bottom:0px;
+        border: 0px solid white;
+    }
+}
