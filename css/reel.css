@@ -21,7 +21,7 @@
     height: 160px !important;
     position:absolute;
     bottom: 32px;
-    right: 16px;
+    right: 0px;
 
     display: flex;
     justify-content: center;
