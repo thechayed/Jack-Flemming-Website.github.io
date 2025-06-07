@@ -160,7 +160,7 @@ var tween = new TWEEN.Tween(scrollPosition, false)
     })
     .start() 
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('.nav-item').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             if(!this.getAttribute('href').includes("Work"))
             {
@@ -327,6 +327,13 @@ function RefreshLoop(time)
         scrollRefreshIndicator.classList.add("scroll-refresh-on-refresh");
     }
 
+    var reelLogo = document.querySelector(".pt-2");
+    if(reelLogo != null)
+    {
+        reelLogo.style.display = "none";
+    }
+    console.log("foo");
+
     window.requestAnimationFrame(RefreshLoop);
 }
 window.requestAnimationFrame(RefreshLoop);
@@ -343,3 +350,6 @@ var isMobile = function() {
     return check;
   };
   
+
+var reel = document.querySelector("playlist");
+var reelScroll = document.querySelector("touch-circle");

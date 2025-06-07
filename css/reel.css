@@ -27,6 +27,8 @@
     justify-content: center;
     align-items: center;
     z-index:10;
+
+    pointer-events: none;
 }
 
 .touch-circle
@@ -71,4 +73,9 @@
         margin-bottom:0px;
         border: 0px solid white;
     }
+}
+
+.text-center
+{
+    display: none !important;
 }
